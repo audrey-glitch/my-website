@@ -1,0 +1,69 @@
+/* App-specific styles */
+
+/* Ensure smooth scroll behavior */
+html {
+  scroll-behavior: auto;
+}
+
+/* Section base styles */
+.section-pinned {
+  will-change: transform;
+}
+
+/* Card glass effect enhancements */
+.card-glass {
+  will-change: transform, opacity;
+}
+
+/* Button hover states */
+.btn-primary {
+  will-change: transform;
+}
+
+/* FAQ accordion transitions */
+.faq-item {
+  will-change: max-height;
+}
+
+/* Testimonial card parallax */
+.testimonial-card {
+  will-change: transform;
+}
+
+/* Form input focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 3px rgba(201, 162, 74, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heading-hero {
+    font-size: clamp(32px, 8vw, 44px);
+  }
+  
+  .heading-section {
+    font-size: clamp(28px, 6vw, 34px);
+  }
+  
+  .card-glass {
+    padding: 1.5rem;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .section-pinned {
+    will-change: auto;
+  }
+}

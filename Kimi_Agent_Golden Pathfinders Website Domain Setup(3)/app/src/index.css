@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 55% 11%;
+    --foreground: 40 14% 96%;
+    --card: 216 55% 11%;
+    --card-foreground: 40 14% 96%;
+    --popover: 216 55% 11%;
+    --popover-foreground: 40 14% 96%;
+    --primary: 43 52% 54%;
+    --primary-foreground: 216 55% 11%;
+    --secondary: 40 23% 94%;
+    --secondary-foreground: 216 55% 11%;
+    --muted: 216 40% 18%;
+    --muted-foreground: 40 14% 72%;
+    --accent: 43 52% 54%;
+    --accent-foreground: 216 55% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 43 30% 35%;
+    --input: 216 40% 18%;
+    --ring: 43 52% 54%;
+    --radius: 0.625rem;
+    --sidebar-background: 216 55% 11%;
+    --sidebar-foreground: 40 14% 96%;
+    --sidebar-primary: 43 52% 54%;
+    --sidebar-primary-foreground: 216 55% 11%;
+    --sidebar-accent: 216 40% 18%;
+    --sidebar-accent-foreground: 40 14% 96%;
+    --sidebar-border: 43 30% 35%;
+    --sidebar-ring: 43 52% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  body {
+    @apply bg-navy text-offwhite font-sans antialiased;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .section-pinned {
+    @apply w-screen h-screen relative overflow-hidden;
+  }
+  
+  .card-glass {
+    @apply rounded-2xl backdrop-blur-sm;
+    background: rgba(11, 26, 47, 0.78);
+    border: 1px solid rgba(201, 162, 74, 0.35);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+  }
+  
+  .vignette-overlay {
+    background: radial-gradient(circle at 50% 45%, rgba(11, 26, 47, 0.25), rgba(11, 26, 47, 0.72) 60%, rgba(11, 26, 47, 0.88)),
+                linear-gradient(180deg, rgba(201, 162, 74, 0.10), rgba(201, 162, 74, 0.00) 55%);
+  }
+  
+  .grain-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+  
+  .label-uppercase {
+    @apply text-xs font-medium uppercase tracking-[0.18em];
+    opacity: 0.85;
+  }
+  
+  .heading-hero {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(44px, 5.2vw, 78px);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+  
+  .heading-section {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(34px, 3.6vw, 56px);
+    line-height: 1.0;
+    font-weight: 600;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-medium transition-all duration-200;
+    background: linear-gradient(135deg, #C9A24A 0%, #a8843a 100%);
+    color: #0B1A2F;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201, 162, 74, 0.35);
+  }
+  
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+  
+  .text-secondary-light {
+    color: rgba(247, 247, 245, 0.72);
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1A2F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 162, 74, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 162, 74, 0.6);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(201, 162, 74, 0.3);
+  color: #F7F7F5;
+}
